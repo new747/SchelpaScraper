@@ -113,12 +113,6 @@ function execYql(url) {
           co: oneLine.replace(/.*sankaList_(ok|ng|)\b.*/,'$1')
         });
       });
-//      yqlResults.span.forEach(function(span) {
-//        coList.push({name: span.content});
-//      });
-//      yqlResults.td.forEach(function(td, idx) {
-//        coList[idx].co = td["class"].replace(/.*sankaList_/, '');
-//      });
       return coList;
     }
   };
@@ -129,18 +123,3 @@ function execYql(url) {
   var json = JSON.parse(jsonString);
   return xpath.parse(json.query.results.result);
 }
-
-//function test() {
-////  var htmlString = UrlFetchApp.fetch('http://www.densuke.biz/list?cd=xEK2p7BeYB33SdD4&pw=').getContentText();
-////  Logger.log(htmlString);
-//  var ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('SS_ID'));
-//  var shDb = ss.getSheetByName('db');
-//  var frozenRowCnt = shDb.getFrozenRows();
-////  shDb.insertRowsBefore(frozenRowCnt + 1, 0);
-//  var vals = shDb.getRange(frozenRowCnt + 1 + 0, 1, 3, shDb.getLastColumn()).getValues();
-//  for (var r in vals) {
-//    for (var c in vals[r]) {
-//      Logger.log(vals[r][c]);
-//    }
-//  }
-//}
